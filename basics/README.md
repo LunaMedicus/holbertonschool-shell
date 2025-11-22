@@ -1,4 +1,3 @@
-````markdown
 # Shell Basic Commands
 
 This repository contains simple shell scripts, each demonstrating one basic command or concept in the Linux shell.
@@ -19,8 +18,7 @@ Prints the absolute path of the current working directory.
 Command used:
 ```bash
 pwd
-````
-
+```
 ---
 
 ### Task 1: Display contents of current directory
