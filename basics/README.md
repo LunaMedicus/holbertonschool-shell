@@ -263,5 +263,3 @@ From the repository root:
    ```
 
 Each script is designed to demonstrate a single command in a clear and simple way.
-
-```
