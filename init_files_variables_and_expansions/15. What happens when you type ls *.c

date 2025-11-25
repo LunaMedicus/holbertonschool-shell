@@ -1,0 +1,64 @@
+# Under the Hood: What happens when you type "ls *.c"
+
+link in Linkedin: https://www.linkedin.com/pulse/under-hood-what-happens-when-you-type-ls-c-aylan-macabalitao-8marf/
+
+### Introduction
+
+My name is Aylan Macabalitao and I am a student currently learning the Linux Command Line. I wanted to share my experience and document what I’m learning, because I think explaining these concepts is the best way to understand them. Hopefully, this helps anyone else starting out on the same journey.
+
+Today, I want to look at what happens under the hood of a seemingly simple command: `ls *.c`.
+
+### The Basics: The Bash Prompt and ls
+
+Before we break down the specific command, let's look at the environment. When you open your terminal, you see the **bash prompt**, which usually looks like `username@hostname:~$`.
+
+This prompt tells you the shell is ready for input. It is controlled by an environment variable called **PS1**, which defines the format and look of the prompt.
+
+To list files, we use `ls`. It stands for "list." When you type `ls` and hit Enter, you see your files, and the prompt returns. It feels instant, but there is actually a specific process the shell goes through to make that happen.
+
+### The Wildcard (*) and the Extension (.c)
+
+Before we look at the steps, let’s look at the specific arguments we are passing: `*.c`.
+
+The asterisk (`*`) is a **wildcard**. In Linux, this character stands in for any string of characters. If you type `ls *`, the shell lists everything in the current directory because the asterisk matches every filename.
+
+When we add `.c` to the end, we create a filter. We are telling the shell to match any filename, but only if it ends with `.c`. This is useful for finding specific file types, like C source code.
+
+### Putting It Together: The Step-by-Step Process
+
+Here is exactly what happens when you type `ls *.c` and hit Enter. The shell follows a specific order of operations.
+
+#### 1. Splitting the Input
+The shell reads your command from the keyboard (`ls *.c`) and breaks it into words (tokens).
+
+#### 2. Checking for Aliases
+The very first thing the shell checks for is **aliases**. An alias is a shortcut you define (like using `l` for `ls -l`). If the shell finds an alias for `ls`, it swaps it out for the real command text here.
+
+#### 3. Expansion (The Important Part)
+**This is the magic step.** Before the `ls` command is executed, the shell performs **expansion**.
+
+The shell looks at the wildcard `*.c` and scans your current directory for matching files.
+* If you have files named `main.c` and `test.c`, the shell replaces the `*.c` text with those specific filenames.
+* The command effectively becomes: `ls main.c test.c`.
+
+**Key Takeaway:** The shell does the work of finding the files (the expansion), not the `ls` command itself.
+
+#### 4. Checking for Built-ins
+Now that the shell knows *what* to run, it needs to find *where* the command is. It first checks if the command is a **built-in**.
+
+Built-ins are commands that are part of the shell itself (like `cd` or `echo`). Since `ls` is usually an executable program and not a built-in, the shell moves to the next step.
+
+#### 5. Searching the PATH
+Since `ls` is not a built-in, the shell looks for an executable program. It searches through the directories listed in your **PATH** environment variable.
+
+The PATH is a list of folders (like `/usr/bin`, `/bin`, etc.). The shell looks through these folders one by one until it finds the `ls` program.
+
+#### 6. Execution and Output
+The shell runs the `ls` program, passing it the list of files found during the expansion step (`main.c` and `test.c`). The `ls` command displays those specific files on your screen.
+
+#### 7. The Prompt Returns
+Once the `ls` command finishes running, the process closes. The shell prints the **bash prompt** (PS1) again, signifying that it is ready for your next command.
+
+---
+
+I hope this clears up the mechanics behind this command. Thanks for reading, and I'll share more as I continue learning!
