@@ -1,2 +1,3 @@
 #!/bin/bash
+read -p "Enter DECIMAL" DECIMAL
 printf '%x\n' $DECIMAL
