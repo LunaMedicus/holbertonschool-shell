@@ -1,2 +1,10 @@
 #!/bin/bash
 printf "%.2f\n" $NUM
+# Usage: NUM=3.14159 ./13-print_float
+# Output: 3.14
+# This script prints the value of the environment variable NUM as a floating-point number with two decimal places.
+# The printf command is used to format and print the output.
+# The format specifier "%.2f" indicates that the number should be printed with two digits after the decimal point.
+# To use the script, set the NUM variable in the environment before running the script.
+# For example, you can run the script with NUM set to 3.14159, and it will output 3.14.
+# If NUM is not set, the script will print 0.00 by default.

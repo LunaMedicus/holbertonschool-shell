@@ -1,2 +1,11 @@
 #!/bin/bash
 echo $(printf %o $(($((5#$(echo $WATER | tr 'water' '01234'))) + $((5#$(echo $STIR | tr 'stir.' '01234'))))) | tr '01234567' 'bestchol')
+# Usage: WATER="water" STIR="stir." ./17-water_and_stir
+# Output: chocolate
+# This script combines the values of the environment variables WATER and STIR to produce the word "chocolate".
+# It first translates the characters in WATER and STIR to their corresponding base-5 digits using the tr command.
+# The resulting base-5 numbers are then converted to decimal and summed.
+# The sum is converted to octal using printf, and finally, the octal digits are translated to the letters in "bestchol" using tr.
+# To use the script, set the WATER and STIR variables in the environment before running the script.
+# For example, you can run the script with WATER set to "water" and STIR set to "stir.", and it will output "chocolate".
+# If the variables are not set correctly, the output may differ.

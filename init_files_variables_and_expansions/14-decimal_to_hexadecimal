@@ -1,3 +1,10 @@
 #!/bin/bash
 read -p "Enter DECIMAL" DECIMAL
 printf '%x\n' $DECIMAL
+# Usage: ./14-decimal_to_hexadecimal
+# Output: (if input is 255) ff
+# This script converts a decimal number to its hexadecimal representation.
+# It prompts the user to enter a decimal number and then uses the printf command to format and print the number in hexadecimal format.
+# The format specifier '%x' is used to convert the decimal number to lowercase hexadecimal.
+# To use the script, simply run it and input a decimal number when prompted.
+# The script will output the corresponding hexadecimal value.

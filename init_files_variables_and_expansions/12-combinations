@@ -1,2 +1,8 @@
 #!/bin/bash
 echo {a..z}{a..z} | tr " " "\n" | egrep -v "oo"
+# Usage: ./12-combinations
+# Output: (all combinations of two lowercase letters except "oo", each on a new line)
+# This script generates all possible combinations of two lowercase letters from 'a' to 'z',
+# excluding the combination "oo". It uses brace expansion to create the combinations,
+# then replaces spaces with newlines using the tr command, and finally filters out "oo" using egrep.
+# To use the script, simply run it in a bash environment.

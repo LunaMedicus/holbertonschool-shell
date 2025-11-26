@@ -1,2 +1,16 @@
 #!/bin/bash
-tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
+tr '[A-Za-z]' '[N-ZA-Mn-za-m]' # ROT13 translation
+# Usage: echo "Hello World" | ./15-rot13
+# Output: Uryyb Jbeyq
+# ROT13 is a simple letter substitution cipher that replaces a letter with the 13th letter after it in the alphabet.
+# For example, 'A' becomes 'N', 'B' becomes 'O', and so on.
+# Non-alphabetic characters remain unchanged.
+# This script uses the 'tr' command to perform the ROT13 transformation on input text.
+# To use the script, you can pipe text into it or redirect a file containing text.
+#tr is a command in Unix and Unix-like operating systems that translates or deletes characters from standard input and writes the result to standard output.
+# The syntax for the tr command is as follows:
+# tr [OPTION]... SET1 [SET2]
+# In this case, we are using tr to translate characters from SET1 to SET2.
+# '[A-Za-z]' represents all uppercase and lowercase letters in the English alphabet.
+# '[N-ZA-Mn-za-m]' represents the corresponding letters shifted by 13 positions.
+# When the script is executed, it reads input from standard input, applies the ROT13 transformation, and outputs the result to standard output.
