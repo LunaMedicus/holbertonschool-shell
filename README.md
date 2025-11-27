@@ -19,7 +19,7 @@ Each file here is a script that execute a basic command from the shell.
 * [Task 14](./14-decimal_to_hexadecimal) - Write a script that converts a number from base 10 to base 16. **printf "%x\n" $DECIMAL**
 * [Task 15](./15-rot13) - Write a script that encodes and decodes text using the rot13 encryption. Assume ASCII. **tr 'a-zA-Z' 'n-za-mN-ZA-N'**
 * [Task 16](./16-odd) - Write a script that prints every other line from the input, starting with the first line. **perl -ne 'print if (++$x)%2'**
-* [Task 17](./17-water_and_stir) -  in the environment variables WATER and STIR and prints the result. WATER is in base water, STIR is in base stir, The result should be in base bestchol.
+* [Task 17](./17-water_and_stir) - Write a shell script that adds the two numbers stored in the environment variables WATER and STIR and prints the result. WATER is in base water, STIR is in base stir, The result should be in base bestchol.
 This directory contains scripts demonstrating shell initialization, variable handling, and expansions.
 
 ## Scripts
