@@ -1,6 +1,4 @@
 #!/bin/bash
-WATER=${WATER:-"water"}
-STIR=${STIR:-"stir."}
 echo $(printf %o $(($((5#$(echo $WATER | tr 'water' '01234'))) + $((5#$(echo $STIR | tr 'stir.' '01234'))))) | tr '01234567' 'bestchol')
 # Usage: WATER="water" STIR="stir." ./17-water_and_stir
 # Output: chocolate
