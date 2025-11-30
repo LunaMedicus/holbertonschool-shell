@@ -9,5 +9,5 @@ echo $(printf %o $(($((5#$(echo $WATER | tr 'water' '01234'))) + $((5#$(echo $ST
 # The resulting base-5 numbers are then converted to decimal and summed.
 # The sum is converted to octal using printf, and finally, the octal digits are translated to the letters in "bestchol" using tr.
 # To use the script, set the WATER and STIR variables in the environment before running the script.
-# For example, you can run the script with WATER set to "water" and STIR set to "stir.", and it will output "chocolate".
+# For example, you can run the script with WATER set to "water" and STIR set to "stir.", and it will output "obc".
 # If the variables are not set correctly, the output may differ.
